@@ -7,19 +7,18 @@ export class Film {
     urlImg: string;
 
     constructor({ id, title, description, releaseDate, filmGenres, urlImg }: {
-        id: string;
+        id?: string;
         title: string;
         description: string;
         releaseDate: Date;
         filmGenres: string;
         urlImg: string;
     }) {
-        this.id = id;
+        this.id = id || '';
         this.title = title;
         this.description = description;
         this.releaseDate = releaseDate;
         this.filmGenres = filmGenres;
         this.urlImg = urlImg;
     }
-
 }

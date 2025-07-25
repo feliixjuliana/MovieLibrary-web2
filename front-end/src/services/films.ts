@@ -22,8 +22,7 @@ export async function getFilmById(id: string): Promise<Film> {
     throw error;
   }
 }
-
-export async function createFilm(filmData: Film): Promise<Film> {
+export async function createFilm(filmData: Omit<Film, 'id'>): Promise<Film> {
   try {
     const response = await axios.post<Film>(API_BASE_URL, filmData);
     return response.data;

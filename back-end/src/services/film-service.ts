@@ -33,7 +33,7 @@ export class FilmService {
     }
 
     async updateFilm(id: string, data: Partial<FilmData>): Promise<Film | null> {
-        const filmUpdate = await this.filmRepository.findById(id)
+        const filmUpdate = await this.filmRepository.findById(id);
 
         if (!filmUpdate) {
             return null;

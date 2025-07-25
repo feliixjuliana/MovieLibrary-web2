@@ -21,7 +21,9 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@types/uuid": "^10.0.0",
     "dotenv": "^17.2.0",
-    "mysql2": "^3.14.2"
+    "mysql2": "^3.14.2",
+    "uuid": "^11.1.0"
   }
 }

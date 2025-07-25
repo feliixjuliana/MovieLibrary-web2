@@ -18,7 +18,6 @@ export default {
             releaseDate: data.releaseDate,
             filmGenres: data.filmGenres,
             urlImg: data.urlImg
-
-        })
+        });
     }
 }

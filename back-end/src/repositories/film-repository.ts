@@ -25,8 +25,7 @@ export class MySQLFilmRepository implements FilmRepository {
             'SELECT * FROM films WHERE title = ?',
             [title]
         );
-        const films = rows as Film[];
-        return films.length ? films[0] : null;
+        return rows.length ? rows[0] as Film : null;
     }
 
     async findById(id: string): Promise<Film | null> {
@@ -34,8 +33,7 @@ export class MySQLFilmRepository implements FilmRepository {
             'SELECT * FROM films WHERE id = ?',
             [id]
         );
-        const films = rows as Film[];
-        return films.length ? films[0] : null;
+        return rows.length ? rows[0] as Film : null;
     }
 
     async getAll(): Promise<Film[]> {

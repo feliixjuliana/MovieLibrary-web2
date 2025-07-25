@@ -1,13 +1,11 @@
-import MainTopo from "../components/ui/mainTopo";
-import Header from "../components/ui/header"
-import MainM from "../components/ui/mainM"
+import Header from "../components/created/header";
+import MainM from "../components/created/mainM"
 
 
 function MovieLibrary() {
   return (
     <>
         <Header />
-        <MainTopo />
         <MainM />
     </>
   );
