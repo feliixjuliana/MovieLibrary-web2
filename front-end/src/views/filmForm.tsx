@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { createFilm, updateFilm, getFilmById } from '../services/films';
 import type { Film } from '../types/film';
 import Spinner from '../components/ui/spinner';
+//import ErrorVisi from '../components/created/Error'
 
 function FilmForm() {
   const { id } = useParams<{ id: string }>();
@@ -98,11 +99,7 @@ function FilmForm() {
       navigate('/');
     } catch (err: unknown) {
       console.error("Erro ao salvar filme:", err);
-      let errorMessage = "Erro ao salvar o filme. Tente novamente.";
-      if (err instanceof Error) {
-        errorMessage = `Erro ao salvar o filme: ${err.message}`;
-      }
-      setError(errorMessage);
+      alert("Sinto muito... houve um erro ao salvar, tente novamente mais tarde.")
     } finally {
       setLoading(false);
     }
@@ -114,8 +111,8 @@ function FilmForm() {
   if (!isFormReady) return null;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[url('bg-cadast.png')] bg-no-repeat bg-cover">
-      <form onSubmit={handleSubmit} className="p-6 rounded-lg shadow-md max-w-lg w-full ">
+    <div className="min-h-screen flex items-center justify-center bg-[url('../../public/bg-cadast.png')] bg-no-repeat bg-cover">
+      <form onSubmit={handleSubmit} className="p-6 rounded-lg shadow-2xl max-w-lg w-full ">
 
         <div className="mb-4">
           <label htmlFor="title" className="block text-white text-sm font-bold mb-2 lg:text-lg">
@@ -189,6 +186,9 @@ function FilmForm() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
+          <label htmlFor="urlImg" className="block text-white text-sm font-bold mb-2">
+            Você pode pegar o link em: https://www.themoviedb.org/movie/
+          </label>
         </div>
 
         <div className="flex items-center justify-between">
