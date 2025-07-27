@@ -15,7 +15,6 @@ Este projeto é uma aplicação web desenvolvida para fazer uma aplicação full
 - **UUID**
 - **Cors**
 - **Tailwind CSS**
-- **Flowbite**
 - **shadcn/ui**
 - **React Router**
 - **Axios**
